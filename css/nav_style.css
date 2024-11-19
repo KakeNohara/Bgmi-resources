@@ -1,6 +1,6 @@
 .nav-container {
     width: 100%;
-    height: 60px;
+    height: 60px; 
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -15,7 +15,6 @@
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    text-decoration: none;
     padding: 10px 15px;
 }
 
@@ -29,7 +28,6 @@
 
 .nav-dropdown {
     position: relative;
-    overflow: hidden;
 }
 
 .nav-dropdown-header {
@@ -42,12 +40,12 @@
 }
 
 .nav-dropdown-content {
-    display: none; /* Hide by default */
+    display: none; /* Initially hidden */
     position: absolute;
     padding: 10px 20px;
     background-color: #202229;
-    width: 200px; /* Fixed width to match the dropdown size */
-    z-index: 1;
+    width: 200px;
+    z-index: 9999;
 }
 
 .nav-dropdown-content a {
@@ -59,8 +57,9 @@
     text-align: center;
 }
 
-.nav-dropdown:hover .nav-dropdown-content {
-    display: block; /* Show on hover */
+/* Show dropdown when the "show" class is added (via JavaScript) */
+.nav-dropdown.show .nav-dropdown-content {
+    display: block; /* Show dropdown */
 }
 
 /* Mobile adjustments */
@@ -69,21 +68,17 @@
         flex-direction: column;
         height: auto;
     }
-
     .nav-item {
         margin: 5px 0;
         font-size: 18px;
     }
-
     .dropdown-caret {
         font-size: 18px;
     }
-
     .nav-dropdown-content {
         position: relative;
         padding: 5px;
     }
-
     .nav-dropdown-content a {
         font-size: 18px;
     }
