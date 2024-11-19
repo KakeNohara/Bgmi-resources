@@ -2,6 +2,7 @@
     display: flex;
     background-color: #202229;
     padding: 10px;
+    position: relative;
 }
 
 .nav-item {
@@ -16,22 +17,24 @@
     cursor: pointer;
     font-size: 16px;
     text-transform: uppercase;
+    padding: 10px;
 }
 
 .nav-dropdown-content {
-    display: none;
+    display: none; /* Hidden by default */
     position: absolute;
-    top: 40px; /* Adjust based on header size */
+    top: 40px; /* Position below header */
     left: 0;
     background-color: #333;
     border-radius: 4px;
     overflow: hidden;
     z-index: 1000;
+    width: 150px; /* Adjust width as needed */
 }
 
 .nav-dropdown-link {
     display: block;
-    padding: 10px 20px;
+    padding: 10px 15px;
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -39,4 +42,8 @@
 
 .nav-dropdown-link:hover {
     background-color: #444;
+}
+
+.nav-item:hover .nav-dropdown-header {
+    color: #ccc; /* Optional hover effect */
 }
