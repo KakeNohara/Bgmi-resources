@@ -44,7 +44,10 @@
 
         // Loop through each dropdown header and add click event
         dropdownHeaders.forEach(header => {
-            header.addEventListener('click', function() {
+            header.addEventListener('click', function(event) {
+                // Prevent click from propagating to document
+                event.stopPropagation();
+
                 // Toggle the "show" class to show or hide the dropdown content
                 const dropdown = this.parentElement;
                 dropdown.classList.toggle('show');
