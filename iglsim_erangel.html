@@ -2,9 +2,7 @@
 
 <html>
 
-
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
@@ -21,11 +19,12 @@
 
     </head>
 
-
     <body onload="initNav(); initIglSimManager('res/Erangel_Mask.png'); initZoomAndPan(); run()">
-
+        
+        <!-- Navigation bar -->
         <nav id="navbar"></nav>
 
+        <!-- Your content -->
         <div id="content">
             <svg id="map" width="90vh" height="90vh" viewBox="0 0 2000 2000">
                 <image href="res/Erangel_PNG.png" x="0" y="0" width="2000" height="2000" />
@@ -50,6 +49,5 @@
         <canvas id="mask-canvas"></canvas>
 
     </body>
-
 
 </html>
