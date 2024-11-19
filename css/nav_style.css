@@ -1,26 +1,26 @@
 .nav-container {
     width: 100%;
-    height: 60px; /* Height for better spacing */
+    height: 60px;
     margin: 0;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start; /* Align items to the start */
-    align-items: center; /* Center items vertically */
+    justify-content: flex-start;
+    align-items: center;
     background-color: #202229;
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden;
 }
 
 .nav-item {
-    margin-left: 15px; /* Reduced margin for smaller screens */
+    margin-left: 15px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     text-decoration: none;
-    padding: 10px 15px; /* Padding for better touch area */
+    padding: 10px 15px;
 }
 
 .nav-item:hover, .nav-dropdown-header:hover, .nav-dropdown-link:hover {
-    color: grey; /* Hover color */
+    color: grey;
 }
 
 .dropdown-caret {
@@ -28,31 +28,31 @@
 }
 
 .nav-dropdown {
-    position: relative; /* Positioning for dropdown */
+    position: relative;
     overflow: hidden;
 }
-  
+
 .nav-dropdown-header {
     font-size: 20px;
     border: none;
     outline: none;
     color: white;
     background-color: inherit;
-    cursor: pointer; /* Pointer cursor for dropdown */
+    cursor: pointer;
 }
 
 .nav-dropdown-content {
-    display: none; /* Initially hidden */
+    display: none; /* Hide by default */
     position: absolute;
     padding: 10px 20px;
     background-color: #202229;
-    width: auto; /* Adjust width if necessary */
+    width: 200px; /* Fixed width to match the dropdown size */
     z-index: 1;
 }
 
 .nav-dropdown-content a {
     display: block;
-    margin-bottom: 10px; /* Spacing for dropdown items */
+    margin-bottom: 10px;
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -60,31 +60,31 @@
 }
 
 .nav-dropdown:hover .nav-dropdown-content {
-    display: block; /* Show dropdown on hover */
+    display: block; /* Show on hover */
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column; /* Stack items vertically on mobile */
-        height: auto; /* Allow height to adjust based on content */
+        flex-direction: column;
+        height: auto;
     }
 
     .nav-item {
-        margin: 5px 0; /* Reduced margin for stacking */
-        font-size: 18px; /* Slightly smaller font size */
+        margin: 5px 0;
+        font-size: 18px;
     }
 
     .dropdown-caret {
-        font-size: 18px; /* Adjust dropdown caret size */
+        font-size: 18px;
     }
 
     .nav-dropdown-content {
-        position: relative; /* Adjust dropdown position for mobile */
-        padding: 5px; /* Reduced padding for dropdown */
+        position: relative;
+        padding: 5px;
     }
 
     .nav-dropdown-content a {
-        font-size: 18px; /* Adjust font size for dropdown items */
+        font-size: 18px;
     }
 }
