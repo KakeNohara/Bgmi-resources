@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <nav class="nav-container">
         <!-- Endings Data -->
         <div class="nav-dropdown nav-item">
-            <button class="nav-dropdown-header" onclick="toggleDropdown(event)">ENDINGS DATA <span class="dropdown-caret">▼</span></button>
+            <button class="nav-dropdown-header">ENDINGS DATA <span class="dropdown-caret">▼</span></button>
             <div class="nav-dropdown-content">
                 <a class="nav-dropdown-link" href="erangel_ending_data.html">Erangel</a>
                 <a class="nav-dropdown-link" href="#">Miramar</a>
@@ -20,7 +20,7 @@
 
         <!-- Rotations -->
         <div class="nav-dropdown nav-item">
-            <button class="nav-dropdown-header" onclick="toggleDropdown(event)">ROTATIONS <span class="dropdown-caret">▼</span></button>
+            <button class="nav-dropdown-header">ROTATIONS <span class="dropdown-caret">▼</span></button>
             <div class="nav-dropdown-content">
                 <a class="nav-dropdown-link" href="erangel_rotations.html">Erangel</a>
                 <a class="nav-dropdown-link" href="miramar.html">Miramar</a>
@@ -29,7 +29,7 @@
 
         <!-- IGL Simulator -->
         <div class="nav-dropdown nav-item">
-            <button class="nav-dropdown-header" onclick="toggleDropdown(event)">IGL SIMULATOR <span class="dropdown-caret">▼</span></button>
+            <button class="nav-dropdown-header">IGL SIMULATOR <span class="dropdown-caret">▼</span></button>
             <div class="nav-dropdown-content">
                 <a class="nav-dropdown-link" href="iglsim_erangel.html">Erangel</a>
                 <a class="nav-dropdown-link" href="iglsim_miramar.html">Miramar</a>
@@ -38,20 +38,26 @@
     </nav>
 
     <script>
-        // Toggle dropdown menu on click
-        function toggleDropdown(event) {
-            const dropdown = event.currentTarget.nextElementSibling;
-            const isVisible = dropdown.style.display === 'block';
-            // Hide all dropdowns
-            document.querySelectorAll('.nav-dropdown-content').forEach(content => content.style.display = 'none');
-            // Show the clicked dropdown
-            dropdown.style.display = isVisible ? 'none' : 'block';
-        }
+        // Function to toggle dropdown visibility
+        document.querySelectorAll('.nav-dropdown-header').forEach(button => {
+            button.addEventListener('click', function () {
+                const dropdownContent = this.nextElementSibling;
 
-        // Hide dropdown when clicking outside
-        document.addEventListener('click', function (event) {
-            const isDropdown = event.target.matches('.nav-dropdown-header, .nav-dropdown-header *');
-            if (!isDropdown) {
+                // Close all open dropdowns
+                document.querySelectorAll('.nav-dropdown-content').forEach(content => {
+                    if (content !== dropdownContent) {
+                        content.style.display = 'none';
+                    }
+                });
+
+                // Toggle the clicked dropdown
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.nav-dropdown')) {
                 document.querySelectorAll('.nav-dropdown-content').forEach(content => content.style.display = 'none');
             }
         });
