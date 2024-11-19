@@ -1,85 +1,42 @@
 .nav-container {
-    width: 100%;
-    height: 60px;
-    margin: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
     background-color: #202229;
-    overflow: hidden;
+    padding: 10px;
 }
 
 .nav-item {
-    margin-left: 15px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    padding: 10px 15px;
-}
-
-.nav-item:hover, .nav-dropdown-header:hover, .nav-dropdown-link:hover {
-    color: grey;
-}
-
-.dropdown-caret {
-    font-size: 20px;
-}
-
-.nav-dropdown {
+    margin-right: 15px;
     position: relative;
 }
 
 .nav-dropdown-header {
-    font-size: 20px;
-    border: none;
-    outline: none;
+    background: none;
     color: white;
-    background-color: inherit;
+    border: none;
     cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 .nav-dropdown-content {
-    display: none; /* Initially hidden */
+    display: none;
     position: absolute;
-    padding: 10px 20px;
-    background-color: #202229;
-    width: 200px;
-    z-index: 9999;
+    top: 40px; /* Adjust based on header size */
+    left: 0;
+    background-color: #333;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
 }
 
-.nav-dropdown-content a {
+.nav-dropdown-link {
     display: block;
-    margin-bottom: 10px;
+    padding: 10px 20px;
     color: white;
     text-decoration: none;
-    font-size: 20px;
-    text-align: center;
+    font-size: 14px;
 }
 
-/* Show dropdown when the "show" class is added */
-.nav-dropdown.show .nav-dropdown-content {
-    display: block;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        height: auto;
-    }
-    .nav-item {
-        margin: 5px 0;
-        font-size: 18px;
-    }
-    .dropdown-caret {
-        font-size: 18px;
-    }
-    .nav-dropdown-content {
-        position: relative;
-        padding: 5px;
-    }
-    .nav-dropdown-content a {
-        font-size: 18px;
-    }
+.nav-dropdown-link:hover {
+    background-color: #444;
 }
