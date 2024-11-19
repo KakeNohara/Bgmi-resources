@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
     <link rel="stylesheet" href="css/base_style.css">
     <link rel="stylesheet" href="css/nav_style.css">
 </head>
@@ -37,24 +35,22 @@
         </div>
     </nav>
 
-    <!-- Add this script to make dropdown work on click -->
     <script>
-        // Select all dropdown headers
+        // Handle dropdown toggle on click
         const dropdownHeaders = document.querySelectorAll('.nav-dropdown-header');
-
-        // Loop through each dropdown header and add click event
+        
         dropdownHeaders.forEach(header => {
             header.addEventListener('click', function(event) {
-                // Prevent click from propagating to document
+                // Prevent event propagation and default behavior
                 event.stopPropagation();
-
-                // Toggle the "show" class to show or hide the dropdown content
-                const dropdown = this.parentElement;
+                
+                // Toggle visibility of the dropdown content
+                const dropdown = this.closest('.nav-dropdown');
                 dropdown.classList.toggle('show');
             });
         });
 
-        // Close the dropdown if clicked anywhere outside of it
+        // Close dropdowns if clicking outside
         document.addEventListener('click', function(event) {
             if (!event.target.closest('.nav-dropdown')) {
                 document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
