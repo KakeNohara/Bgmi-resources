@@ -13,28 +13,52 @@
 <body>
     <nav class="nav-container">
         <div class="nav-dropdown nav-item">
-            <button class="nav-dropdown-header">ENDINGS DATA <span class="dropdown-caret">▼</span></button>
-            <div class="nav-dropdown-content">
+            <button class="nav-dropdown-header" onclick="toggleDropdown('dropdown-endings')">ENDINGS DATA <span class="dropdown-caret">▼</span></button>
+            <div id="dropdown-endings" class="nav-dropdown-content">
                 <a class="nav-dropdown-link" href="erangel_ending_data.html">Erangel</a>
                 <a class="nav-dropdown-link" href="">Miramar</a>
             </div>
         </div>
 
         <div class="nav-dropdown nav-item">
-            <button class="nav-dropdown-header">ROTATIONS <span class="dropdown-caret">▼</span></button>
-            <div class="nav-dropdown-content">
+            <button class="nav-dropdown-header" onclick="toggleDropdown('dropdown-rotations')">ROTATIONS <span class="dropdown-caret">▼</span></button>
+            <div id="dropdown-rotations" class="nav-dropdown-content">
                 <a class="nav-dropdown-link" href="erangel_rotations.html">Erangel</a>
                 <a class="nav-dropdown-link" href="miramar.html">Miramar</a>
             </div>
         </div>
 
         <div class="nav-dropdown nav-item">
-            <button class="nav-dropdown-header">IGL SIMULATOR <span class="dropdown-caret">▼</span></button>
-            <div class="nav-dropdown-content">
+            <button class="nav-dropdown-header" onclick="toggleDropdown('dropdown-igl')">IGL SIMULATOR <span class="dropdown-caret">▼</span></button>
+            <div id="dropdown-igl" class="nav-dropdown-content">
                 <a class="nav-dropdown-link" href="iglsim_erangel.html">Erangel</a>
                 <a class="nav-dropdown-link" href="iglsim_miramar.html">Miramar</a>
             </div>
         </div>
     </nav>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdownContent = document.getElementById(dropdownId);
+            // Toggle visibility of the dropdown
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+
+        // Close dropdowns when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.nav-dropdown-header')) {
+                var dropdowns = document.getElementsByClassName("nav-dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    if (dropdowns[i].style.display === "block") {
+                        dropdowns[i].style.display = "none";
+                    }
+                }
+            }
+        };
+    </script>
 </body>
 </html>
