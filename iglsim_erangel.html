@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html>
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>IGL Simulator - Erangel</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -16,20 +14,13 @@
         <script src="script/inject_nav.js"></script>
         <script src="script/zoom_and_pan.js"></script>
         <script src="script/iglsim_manager.js"></script>
-
     </head>
-
     <body onload="initNav(); initIglSimManager('res/Erangel_Mask.png'); initZoomAndPan(); run()">
-        
-        <!-- Navigation bar -->
         <nav id="navbar"></nav>
-
-        <!-- Your content -->
         <div id="content">
             <svg id="map" width="90vh" height="90vh" viewBox="0 0 2000 2000">
                 <image href="res/Erangel_PNG.png" x="0" y="0" width="2000" height="2000" />
             </svg>
-
             <div id="phase-changers-container">
                 <button id="phase-0" class="phase-changer">SHOW C-0</button>
                 <button id="phase-1" class="phase-changer">SHOW C-1</button>
@@ -45,9 +36,6 @@
                 <p id="status-string2"></p>
             </div>
         </div>
-
         <canvas id="mask-canvas"></canvas>
-
     </body>
-
 </html>
