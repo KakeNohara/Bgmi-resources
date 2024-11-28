@@ -1,4 +1,39 @@
+
 body {
+    font-family: 'Teko', 'Oswald', sans-serif; 
     background-color: #18191D;
-    margin: 0px;
+    color: #f4f4f4;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Teko', sans-serif; 
+    color: #ffcc00; 
+    letter-spacing: 2px;
+}
+
+
+p, span, a, li {
+    font-family: 'Oswald', sans-serif;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+
+button {
+    font-family: 'Teko', sans-serif;
+    font-weight: bold;
+    background-color: #DC9E2D;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #E0A736;
+    color: #fff;
 }
