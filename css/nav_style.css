@@ -1,62 +1,78 @@
-/* Ensure the navigation bar adapts to smaller screens */
+/* Navigation Container */
 .nav-container {
     display: flex;
-    flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
+    flex-wrap: wrap;
     justify-content: space-between;
-    background-color: #333;
-    padding: 10px;
-    overflow: hidden;
-    box-sizing: border-box; /* Prevents padding issues */
+    background-color: #333;  /* This is the background color of the navigation bar */
+    padding: 15px;           /* Increased padding to provide more space */
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;             /* Make sure it takes full width */
 }
 
+/* Dropdown Items */
 .nav-item {
     position: relative;
-    margin: 5px; /* Adds spacing to prevent items from cutting */
+    margin: 5px;
 }
 
-/* Adjust dropdown content to ensure it is visible */
+/* Dropdown Content (Hidden by Default) */
 .nav-dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    left: 0; /* Ensures the dropdown aligns properly */
+    z-index: 10;
 }
 
-/* Show dropdown when hovering */
+/* Display Dropdown Content on Hover (For Desktop) */
 .nav-dropdown:hover .nav-dropdown-content {
     display: block;
 }
 
-/* Adjust the look of the dropdown items */
+/* Display Dropdown Content on Click (For Mobile) */
+.nav-dropdown.active .nav-dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
 .nav-dropdown-content a {
     padding: 8px 12px;
     text-decoration: none;
-    display: block;
     color: black;
-    white-space: nowrap; /* Prevents text from wrapping */
+    display: block;
 }
 
-/* Responsive for small screens */
+/* Dropdown Header (Clickable Area) */
+.nav-dropdown-header {
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    background-color: #333;
+    border: none;
+    text-align: center;
+}
+
+/* Hover Effect */
+.nav-dropdown-header:hover {
+    background-color: #575757;
+}
+
+/* For Mobile: Centering Dropdown and Making it Responsive */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
     }
 
     .nav-item {
-        width: 100%; /* Full width for each item */
+        width: 100%;
         text-align: center;
     }
 
+    /* Center Dropdown Content */
     .nav-dropdown-content {
-        left: 50%; /* Centers dropdown */
-        transform: translateX(-50%); /* Centers dropdown */
+        left: 50%;
+        transform: translateX(-50%);
     }
-}
-
-/* Add some padding to the nav items to prevent overlap */
-.nav-dropdown-header {
-    padding: 10px;
 }
