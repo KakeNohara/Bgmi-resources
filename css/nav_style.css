@@ -14,6 +14,7 @@
     margin: 5px; /* Adds spacing to prevent items from cutting */
 }
 
+/* Adjust dropdown content to ensure it is visible */
 .nav-dropdown-content {
     display: none;
     position: absolute;
@@ -21,13 +22,15 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    left: 0; /* Ensures the dropdown aligns properly */
 }
 
+/* Show dropdown when hovering */
 .nav-dropdown:hover .nav-dropdown-content {
-    display: block; /* Show dropdown on hover */
+    display: block;
 }
 
-/* Make dropdowns more responsive */
+/* Adjust the look of the dropdown items */
 .nav-dropdown-content a {
     padding: 8px 12px;
     text-decoration: none;
@@ -46,4 +49,14 @@
         width: 100%; /* Full width for each item */
         text-align: center;
     }
+
+    .nav-dropdown-content {
+        left: 50%; /* Centers dropdown */
+        transform: translateX(-50%); /* Centers dropdown */
+    }
+}
+
+/* Add some padding to the nav items to prevent overlap */
+.nav-dropdown-header {
+    padding: 10px;
 }
